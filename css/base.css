@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "Oswald Local";
+  src: url("../assets/fonts/Oswald/Oswald-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 700;
+}
+
+:root {
+  --negro: #101010;
+  --carbon: #1f1f1c;
+  --blanco: #fffdf8;
+  --papel: #f6f1e8;
+  --linea: #ded6c6;
+  --tinta: #171615;
+  --gris: #68645e;
+  --verde: #1f6f52;
+  --vino: #9b1c23;
+  --oro: #ae8734;
+  --azul: #2d6173;
+  --sombra: 0 18px 42px rgba(16, 16, 16, 0.14);
+  --radio: 6px;
+  --ancho-contenido: 1120px;
+  --fuente-principal: "Oswald Local", Arial, sans-serif;
+  --transicion: 0.28s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: clip;
+  color: var(--tinta);
+  background-color: var(--negro);
+  background-image:
+    linear-gradient(115deg, rgba(16, 16, 16, 0.92), rgba(31, 111, 82, 0.2)),
+    url("../imagenes/fondo-web.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: var(--fuente-principal);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.04), transparent 18%),
+    radial-gradient(circle at top left, rgba(174, 135, 52, 0.12), transparent 28%);
+}
+
+::selection {
+  color: var(--tinta);
+  background-color: rgba(174, 135, 52, 0.32);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+ol {
+  list-style: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+summary,
+label {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--tinta);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+h1 {
+  max-width: 760px;
+  font-size: clamp(2.8rem, 5vw, 5.1rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.08rem;
+  font-weight: 650;
+}
+
+.subtitulo {
+  max-width: 720px;
+  margin-top: 1.2rem;
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  font-weight: 500;
+}
+
+.descripcion,
+.texto-seccion {
+  margin-top: 0.85rem;
+  color: var(--gris);
+}
+
+.descripcion-hero {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 680px;
+}
+
+:where(a, button, summary):focus-visible {
+  outline: 3px solid rgba(31, 111, 82, 0.52);
+  outline-offset: 4px;
+}
+
+.descripcion-hero p,
+.texto-seccion {
+  text-align: justify;
+}

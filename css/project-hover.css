@@ -1,0 +1,222 @@
+.proyecto-reel {
+  --personaje-hover: none;
+  --salida-x: 0;
+  --salida-y: -18px;
+  --personaje-scale: 0.96;
+  --card-retroceso: rotateX(18deg) translateY(18px) translateZ(-110px) scale(0.82);
+  overflow: visible;
+  background-color: transparent;
+  box-shadow: none;
+  isolation: isolate;
+  perspective: 900px;
+  transform-style: preserve-3d;
+  z-index: 1;
+}
+
+.reel-proyectos {
+  overflow: visible;
+  padding-block: 2.4rem 2.2rem;
+}
+
+.visor-reel {
+  padding-block: 3.8rem 2.6rem;
+  margin-block: -3.4rem -2rem;
+}
+
+.flechas-reel {
+  z-index: 20;
+}
+
+.proyecto-reel::before,
+.proyecto-reel::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  transition:
+    opacity 0.45s ease,
+    transform 0.55s cubic-bezier(0.18, 0.82, 0.22, 1);
+}
+
+.proyecto-reel::before {
+  left: 8%;
+  right: 8%;
+  bottom: -4%;
+  height: 38%;
+  z-index: 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(16, 16, 16, 0.5), transparent 68%);
+  filter: blur(16px);
+  opacity: 0;
+  transform: translateY(18px) scale(0.8);
+}
+
+.proyecto-reel::after {
+  inset: -22% -20% -9%;
+  z-index: 3;
+  background-image: var(--personaje-hover);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+  opacity: 0;
+  filter: drop-shadow(0 24px 22px rgba(0, 0, 0, 0.5));
+  transform: translate(0, 24px) scale(0.78);
+}
+
+.proyecto-reel:hover {
+  z-index: 8;
+  transform: translateY(-4px);
+}
+
+.proyecto-reel:hover::before {
+  opacity: 1;
+  transform: translateY(36px) scale(1.08);
+}
+
+.proyecto-reel:hover::after {
+  opacity: 1;
+  transform: translate(var(--salida-x), var(--salida-y)) scale(var(--personaje-scale));
+}
+
+.proyecto-reel:hover .marco-proyecto {
+  box-shadow: 0 32px 48px rgba(0, 0, 0, 0.38);
+  transform: var(--card-retroceso);
+}
+
+.proyecto-reel:hover .marco-proyecto img {
+  filter: saturate(0.74) contrast(1.03) brightness(0.52) blur(0.35px);
+  transform: scale(1.04);
+}
+
+.proyecto-artistica-01 {
+  --personaje-hover: url("../imagenes/mis-proyectos/fotografia-artistica/hover/1.png");
+  --salida-x: -2%;
+}
+
+.proyecto-artistica-02 {
+  --personaje-hover: url("../imagenes/mis-proyectos/fotografia-artistica/hover/2.png");
+  --salida-x: 2%;
+}
+
+.proyecto-artistica-03 {
+  --personaje-hover: url("../imagenes/mis-proyectos/fotografia-artistica/hover/3.png");
+  --salida-x: 4%;
+}
+
+.proyecto-artistica-04 {
+  --personaje-hover: url("../imagenes/mis-proyectos/fotografia-artistica/hover/4.png");
+  --salida-x: 3%;
+}
+
+.proyecto-artistica-05 {
+  --personaje-hover: url("../imagenes/mis-proyectos/fotografia-artistica/hover/5.png");
+  --salida-x: -4%;
+  --personaje-scale: 0.9;
+}
+
+.proyecto-artistica-06 {
+  --personaje-hover: url("../imagenes/mis-proyectos/fotografia-artistica/hover/6.png");
+  --salida-x: -3%;
+}
+
+.proyecto-artistica-07 {
+  --personaje-hover: url("../imagenes/mis-proyectos/fotografia-artistica/hover/7.png");
+  --salida-x: 2%;
+}
+
+.proyecto-producto-01 {
+  --personaje-hover: url("../imagenes/mis-proyectos/fotografia-producto/hover/1.png");
+  --salida-x: -4%;
+  --personaje-scale: 0.92;
+}
+
+.proyecto-producto-02 {
+  --personaje-hover: url("../imagenes/mis-proyectos/fotografia-producto/hover/2.png");
+  --salida-x: 2%;
+  --personaje-scale: 0.9;
+}
+
+.proyecto-producto-03 {
+  --personaje-hover: url("../imagenes/mis-proyectos/fotografia-producto/hover/3.png");
+  --salida-x: -2%;
+  --personaje-scale: 0.94;
+}
+
+.proyecto-producto-04 {
+  --personaje-hover: url("../imagenes/mis-proyectos/fotografia-producto/hover/4.png");
+  --salida-x: -5%;
+  --personaje-scale: 0.9;
+}
+
+.proyecto-producto-05 {
+  --personaje-hover: url("../imagenes/mis-proyectos/fotografia-producto/hover/5.png");
+  --salida-x: 3%;
+  --personaje-scale: 0.9;
+}
+
+.proyecto-producto-06 {
+  --personaje-hover: url("../imagenes/mis-proyectos/fotografia-producto/hover/6.png");
+  --salida-x: -3%;
+  --personaje-scale: 0.94;
+}
+
+.proyecto-producto-07 {
+  --personaje-hover: url("../imagenes/mis-proyectos/fotografia-producto/hover/7.png");
+  --salida-x: -4%;
+  --personaje-scale: 0.92;
+}
+
+.proyecto-producto-08 {
+  --personaje-hover: url("../imagenes/mis-proyectos/fotografia-producto/hover/8.png");
+  --salida-x: -2%;
+  --personaje-scale: 0.94;
+}
+
+.proyecto-retoque-01 {
+  --personaje-hover: url("../imagenes/mis-proyectos/retoque-fotografico/hover/1.png");
+  --salida-x: 3%;
+}
+
+.proyecto-retoque-02 {
+  --personaje-hover: url("../imagenes/mis-proyectos/retoque-fotografico/hover/2.png");
+  --salida-x: -2%;
+}
+
+.proyecto-retoque-03 {
+  --personaje-hover: url("../imagenes/mis-proyectos/retoque-fotografico/hover/3.png");
+  --salida-x: 2%;
+}
+
+.proyecto-retoque-04 {
+  --personaje-hover: url("../imagenes/mis-proyectos/retoque-fotografico/hover/4.png");
+  --salida-x: -4%;
+  --personaje-scale: 0.9;
+}
+
+.proyecto-retoque-05 {
+  --personaje-hover: url("../imagenes/mis-proyectos/retoque-fotografico/hover/5.png");
+  --salida-x: 2%;
+  --personaje-scale: 0.9;
+}
+
+@media (max-width: 720px) {
+  .reel-proyectos {
+    padding-block: 1.8rem 1.6rem;
+  }
+
+  .visor-reel {
+    padding-block: 2.8rem 2rem;
+    margin-block: -2.4rem -1.5rem;
+  }
+
+  .proyecto-reel::after {
+    inset: -15% -18% -6%;
+  }
+
+  .proyecto-reel:hover::after {
+    transform: translate(var(--salida-x), -8px) scale(0.9);
+  }
+
+  .proyecto-reel:hover .marco-proyecto {
+    transform: rotateX(12deg) translateY(14px) translateZ(-70px) scale(0.86);
+  }
+}

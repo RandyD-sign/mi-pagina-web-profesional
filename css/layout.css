@@ -1,0 +1,240 @@
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background-color: rgba(16, 16, 16, 0.94);
+  border-bottom: 1px solid rgba(255, 253, 248, 0.14);
+  backdrop-filter: blur(12px);
+}
+
+.navegacion {
+  width: calc(100% - 40px);
+  max-width: var(--ancho-contenido);
+  min-height: 76px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--blanco);
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  text-transform: none;
+  cursor: default;
+}
+
+.marca-texto {
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.panel-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.panel-superior-menu,
+.detalle-menu,
+.boton-menu,
+.cerrar-menu,
+.control-menu {
+  display: none;
+}
+
+.lista-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.enlace-menu {
+  position: relative;
+  color: rgba(255, 253, 248, 0.72);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: color var(--transicion);
+}
+
+.enlace-menu::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.45rem;
+  width: 0;
+  height: 2px;
+  background-color: var(--oro);
+  transition: width var(--transicion);
+}
+
+.enlace-menu:hover,
+.enlace-menu:focus-visible {
+  color: var(--blanco);
+}
+
+.enlace-menu:hover::after,
+.enlace-menu:focus-visible::after {
+  width: 100%;
+}
+
+.contenido {
+  width: calc(100% - 40px);
+  max-width: var(--ancho-contenido);
+  margin-inline: auto;
+  padding: 28px 0 56px;
+}
+
+.portada,
+.tarjeta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(246, 241, 232, 0.96)),
+    var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.portada::before,
+.tarjeta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(174, 135, 52, 0.1), transparent 34%),
+    linear-gradient(315deg, rgba(45, 97, 115, 0.08), transparent 24%);
+}
+
+.portada > *,
+.tarjeta > * {
+  position: relative;
+  z-index: 1;
+}
+
+.portada {
+  min-height: 640px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) 360px;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  padding: clamp(2rem, 5vw, 4.5rem);
+  border-top: 4px solid var(--oro);
+}
+
+.seccion {
+  margin-top: 24px;
+}
+
+.tarjeta {
+  padding: clamp(1.4rem, 4vw, 2.6rem);
+  transition:
+    transform var(--transicion),
+    border-color var(--transicion),
+    box-shadow var(--transicion);
+}
+
+.tarjeta:hover {
+  transform: translateY(-2px);
+  border-color: rgba(174, 135, 52, 0.55);
+}
+
+.encabezado-seccion {
+  margin-bottom: 1.35rem;
+}
+
+.sobre-mi-grid {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.82fr) minmax(0, 1.3fr);
+  gap: clamp(1.4rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.sobre-mi-imagen {
+  overflow: hidden;
+  border-radius: 8px;
+  color: var(--blanco);
+  background-color: var(--negro);
+  box-shadow: 0 18px 34px rgba(16, 16, 16, 0.16);
+}
+
+.sobre-mi-imagen img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  display: block;
+  object-fit: cover;
+  filter: saturate(0.95) contrast(1.04);
+  transition:
+    transform var(--transicion),
+    filter var(--transicion);
+}
+
+.sobre-mi-imagen:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.08) contrast(1.08);
+}
+
+.sobre-mi-imagen figcaption {
+  padding: 0.85rem 1rem;
+  color: rgba(255, 253, 248, 0.78);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.sobre-mi-contenido {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+}
+
+.ficha-personal {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+.ficha-personal p {
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+  min-height: 122px;
+  padding: 1rem;
+  border: 1px solid var(--linea);
+  border-top: 3px solid var(--oro);
+  border-radius: 8px;
+  background-color: rgba(255, 253, 248, 0.58);
+}
+
+.ficha-personal strong {
+  color: var(--tinta);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+}
+
+.ficha-personal span {
+  color: var(--gris);
+}
+
+.pie-pagina {
+  width: calc(100% - 40px);
+  max-width: var(--ancho-contenido);
+  margin: 0 auto 40px;
+  padding: 1.2rem 0;
+  color: rgba(255, 253, 248, 0.72);
+  text-align: center;
+  font-size: 0.88rem;
+}
+
+.pie-pagina strong {
+  color: var(--oro);
+}

@@ -1,0 +1,308 @@
+#habilidades {
+  border-left: 4px solid var(--vino);
+}
+
+#contacto,
+.tarjeta-redes {
+  border-left: 4px solid var(--oro);
+}
+
+.redes-mosaico {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid var(--negro);
+  border-radius: 8px;
+  background-color: var(--blanco);
+}
+
+.red-bloque {
+  min-height: 236px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 1.35rem 1rem 1.2rem;
+  color: var(--tinta);
+  background-color: var(--blanco);
+  border-right: 1px solid var(--negro);
+  text-align: center;
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.red-bloque::before {
+  display: none;
+}
+
+.red-bloque:last-child {
+  border-right: 0;
+}
+
+.red-bloque:hover {
+  transform: translateY(-4px);
+  filter: contrast(1.04);
+  background-color: var(--papel);
+}
+
+.red-bloque:hover::before {
+  display: none;
+}
+
+.red-bloque img {
+  width: clamp(92px, 10vw, 136px);
+  height: clamp(92px, 10vw, 136px);
+  border-radius: 12px;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.red-bloque:hover img {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow:
+    0 16px 28px rgba(16, 16, 16, 0.16),
+    0 0 0 1px var(--negro);
+}
+
+.red-bloque span {
+  max-width: 11rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.red-bloque strong {
+  color: var(--negro);
+  font-size: 0.88rem;
+  line-height: 1.15;
+}
+
+.red-youtube {
+  background-color: var(--blanco);
+}
+
+.red-tiktok {
+  background-color: var(--papel);
+}
+
+.red-instagram {
+  background-color: var(--blanco);
+}
+
+.red-facebook {
+  background-color: var(--papel);
+}
+
+.experiencia-academica-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.4rem);
+}
+
+.experiencia-academica-card {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--linea);
+  border-radius: 8px;
+  background-color: rgba(255, 253, 248, 0.72);
+  transition:
+    transform var(--transicion),
+    box-shadow var(--transicion),
+    border-color var(--transicion);
+}
+
+.experiencia-academica-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(174, 135, 52, 0.48);
+  box-shadow: 0 18px 32px rgba(16, 16, 16, 0.14);
+}
+
+.experiencia-academica-card img,
+.experiencia-academica-card video {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  display: block;
+  object-fit: cover;
+  background-color: var(--negro);
+}
+
+.experiencia-academica-card figcaption {
+  flex: 1;
+  display: grid;
+  align-content: start;
+  gap: 0.45rem;
+  padding: 1rem;
+}
+
+.experiencia-academica-card h3 {
+  font-size: 1.25rem;
+}
+
+.experiencia-academica-card p {
+  color: var(--gris);
+  font-size: 0.92rem;
+}
+
+.tabs-proyectos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: -0.35rem auto 1rem;
+}
+
+.tab-proyecto {
+  min-height: 42px;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--negro);
+  border-radius: 999px;
+  color: var(--tinta);
+  background-color: rgba(255, 253, 248, 0.72);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform var(--transicion),
+    color var(--transicion),
+    background-color var(--transicion),
+    border-color var(--transicion),
+    box-shadow var(--transicion);
+}
+
+.tab-proyecto:hover,
+.tab-proyecto:focus-visible {
+  transform: translateY(-2px);
+  background-color: var(--papel);
+  box-shadow: 0 12px 22px rgba(16, 16, 16, 0.1);
+}
+
+.tab-proyecto.activo {
+  color: var(--blanco);
+  background-color: var(--negro);
+  border-color: var(--negro);
+}
+
+.reel-proyectos {
+  --card-reel: clamp(178px, 23vw, 260px);
+  --alto-reel: clamp(318px, 34vw, 390px);
+  --gap-reel: clamp(0.75rem, 1.4vw, 1rem);
+  position: relative;
+  overflow: visible;
+  padding-block: 0.25rem 1rem;
+}
+
+.visor-reel {
+  width: 100%;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+.pista-reel {
+  width: max-content;
+  display: flex;
+  gap: var(--gap-reel);
+  will-change: transform;
+  transition: transform 0.54s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pista-reel.sin-transicion {
+  transition: none;
+}
+
+.proyecto-reel {
+  position: relative;
+  width: var(--card-reel);
+  flex: 0 0 var(--card-reel);
+  min-height: var(--alto-reel);
+  overflow: visible;
+  border-radius: 8px;
+  color: var(--blanco);
+  transform: translateZ(0);
+}
+
+.marco-proyecto {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  min-height: var(--alto-reel);
+  overflow: hidden;
+  border-radius: inherit;
+  background-color: var(--negro);
+  box-shadow: 0 22px 42px rgba(16, 16, 16, 0.18);
+  transform-origin: center bottom;
+  transition:
+    transform 0.55s cubic-bezier(0.18, 0.82, 0.22, 1),
+    filter 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.marco-proyecto img {
+  display: block;
+  width: 100%;
+  height: var(--alto-reel);
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.02);
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+.flechas-reel {
+  position: absolute;
+  left: -0.4rem;
+  right: -0.4rem;
+  top: 50%;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.flecha-reel {
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(16, 16, 16, 0.18);
+  border-radius: 50%;
+  color: var(--tinta);
+  background-color: rgba(255, 253, 248, 0.94);
+  box-shadow: 0 14px 28px rgba(16, 16, 16, 0.14);
+  font-size: 2rem;
+  line-height: 1;
+  pointer-events: auto;
+  cursor: pointer;
+  transition:
+    transform var(--transicion),
+    color var(--transicion),
+    background-color var(--transicion),
+    border-color var(--transicion);
+}
+
+.flecha-reel:hover {
+  transform: translateY(-2px) scale(1.04);
+  color: var(--blanco);
+  background-color: var(--negro);
+  border-color: var(--negro);
+}
+
+.tarjeta-contacto {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.2rem, 3vw, 1.7rem);
+}
+
+.tarjeta-contacto:hover {
+  border-color: var(--linea);
+  transform: none;
+}
